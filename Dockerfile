@@ -21,7 +21,9 @@ RUN chmod +x geckodriver
 ENV PATH=$PATH:./
 RUN echo $PATH
 
-# Sinatra Server (as per https://www.digitalocean.com/community/questions/how-can-i-deploy-a-sinatra-app)
-#RUN apt-get install nginx -y
 
-CMD ["ruby", "crawler.rb"]
+# To debug sinatra app
+RUN apt-get install screen
+RUN apt install vim -y
+
+CMD ["rackup"]
